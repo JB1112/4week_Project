@@ -108,7 +108,7 @@ public class EnemyBaseState : IState
 
         float playerDistanceSqr = (stateMachine.Target.transform.position - stateMachine.Enemy.transform.position).sqrMagnitude;
 
-        //sqrMagnitude 거리를 구할 때 제곱근을 미리 해주면 연산을 줄일 수 있음
+        //sqrMagnitude 거리를 구할 때 제곱근을 미리 해주면 연산을 줄일 수 있음.
 
         return playerDistanceSqr <= stateMachine.Enemy.Data.PlayerChasingRange * stateMachine.Enemy.Data.PlayerChasingRange;
     }

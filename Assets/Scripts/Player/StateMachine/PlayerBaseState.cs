@@ -109,7 +109,7 @@ public class PlayerBaseState : IState
 
         float playerDistanceSqr = (stateMachine.Target.transform.position - stateMachine.Player.transform.position).sqrMagnitude;
 
-        //sqrMagnitude °Å¸®¸¦ ±¸ÇÒ ¶§ Á¦°ö±ÙÀ» ¹Ì¸® ÇØÁÖ¸é ¿¬»êÀ» ÁÙÀÏ ¼ö ÀÖÀ½
+        //sqrMagnitude ê±°ë¦¬ë¥¼ êµ¬í•  ë•Œ ì œê³±ê·¼ì„ ë¯¸ë¦¬ í•´ì£¼ë©´ ì—°ì‚°ì„ ì¤„ì¼ ìˆ˜ ìˆìŒ.
 
         return playerDistanceSqr <= stateMachine.Player.Data.EnemyChasingRange * stateMachine.Player.Data.EnemyChasingRange;
     }

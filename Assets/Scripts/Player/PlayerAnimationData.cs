@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-[Serializable] //Á÷·ÄÈ­°¡ °¡´ÉÇÏ´Ù°í Ç¥½ÃÇØÁÜ
+[Serializable] //ì§ë ¬í™”ê°€ ê°€ëŠ¥í•˜ë‹¤ê³  í‘œì‹œí•´ì¤Œ.
 public class PlayerAnimationData
 {
     [SerializeField] private string groundParameterName = "@Ground";

@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] public int maxHealth = 100;
-    public int health;
+    [SerializeField] public float maxHealth = 100;
+    public float health;
     public event Action OnDie;
     public event Action OnDamage;
     public event Action OnHeal;
@@ -22,6 +22,8 @@ public class Health : MonoBehaviour
 
         health = Mathf.Max(health - damage, 0);
 
+        OnDamage?.Invoke();
+
         if (health == 0) OnDie?.Invoke();
 
         Debug.Log(health);
@@ -32,5 +34,7 @@ public class Health : MonoBehaviour
         if (health == 0) return;
 
         health = Mathf.Min(health + heal, maxHealth);
+
+        OnHeal.Invoke();
     }
 }

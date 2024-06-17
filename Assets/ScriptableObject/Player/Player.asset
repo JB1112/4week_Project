@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887f99e17c26c814c915af0bd12dcde7, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  <EnemyChasingRange>k__BackingField: 10
+  <EnemyChasingRange>k__BackingField: 20
   <AttackRange>k__BackingField: 0.5
   <ForceTransitionTime>k__BackingField: 0.1
   <Force>k__BackingField: 0.2
   Damage: 10
   <Dealing_Start_TransitionTime>k__BackingField: 0.25
   <Dealing_End_TransitionTime>k__BackingField: 0.5
+  Gold: 0
   <GroundData>k__BackingField:
     <BaseSpeed>k__BackingField: 5
     <BaseRotationDamping>k__BackingField: 1
