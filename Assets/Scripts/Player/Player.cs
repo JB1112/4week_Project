@@ -35,7 +35,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        stateMachine.Initialize();
+
         stateMachine.ChangeState(stateMachine.IdleState);
 
         health.OnDie += OnDie;
@@ -45,6 +46,7 @@ public class Player : MonoBehaviour
     {
         stateMachine.HandleInput();
         stateMachine.Update();
+        stateMachine.UpdateTarget();
     }
 
     private void FixedUpdate()

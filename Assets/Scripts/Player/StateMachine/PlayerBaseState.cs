@@ -29,6 +29,7 @@ public class PlayerBaseState : IState
 
     public virtual void Update()
     {
+        if (stateMachine.Target == null) return;
         Move();
     }
 
@@ -104,7 +105,7 @@ public class PlayerBaseState : IState
 
     protected bool IsInChaseRange()
     {
-        if (stateMachine.Target.IsDead) return false;
+        if (stateMachine.Target == null || stateMachine.Target.IsDead) return false;
 
         float playerDistanceSqr = (stateMachine.Target.transform.position - stateMachine.Player.transform.position).sqrMagnitude;
 

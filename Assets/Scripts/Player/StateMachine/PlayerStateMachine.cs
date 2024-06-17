@@ -20,7 +20,6 @@ public class PlayerStateMachine : StateMachine
     public PlayerStateMachine(Player player)
     {
         this.Player = player;
-        Target = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Health>();
 
         IdleState = new PlayerIdleState(this);
         ChasingState = new PlayerChasingState(this);
@@ -28,5 +27,26 @@ public class PlayerStateMachine : StateMachine
 
         MovementSpeed = Player.Data.GroundData.BaseSpeed;
         RotationDamping = Player.Data.GroundData.BaseRotationDamping;
+    }
+
+    public void Initialize()
+    {
+        GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+        if (enemy != null)
+        {
+            Target = enemy.GetComponent<Health>();
+        }
+    }
+
+    public void UpdateTarget()
+    {
+        if (Target == null)
+        {
+            GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+            if (enemy != null)
+            {
+                Target = enemy.GetComponent<Health>();
+            }
+        }
     }
 }

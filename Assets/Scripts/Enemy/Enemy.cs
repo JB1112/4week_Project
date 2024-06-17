@@ -34,7 +34,6 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         stateMachine.ChangeState(stateMachine.IdleState);
 
         health.OnDie += OnDie;
@@ -55,5 +54,6 @@ public class Enemy : MonoBehaviour
     {
         Animator.SetTrigger("Die");
         enabled = false;
+        Destroy(gameObject, 2f);
     }
 }
